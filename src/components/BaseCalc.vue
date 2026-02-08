@@ -28,7 +28,11 @@
         },
         methods: {
             async sendForm() {
-                const response = await axios.get(`http://practice.be/calc.php?a=${this.a}&b=${this.b}`)
+                // const response = await axios.get(`http://practice.be/calc.php?a=${this.a}&b=${this.b}`)
+                const response = await axios.post(`http://practice.be/calc.php`, {
+                    a: this.a,
+                    b: this.b
+                })
                 this.result = response.data.result;
             }
         }
